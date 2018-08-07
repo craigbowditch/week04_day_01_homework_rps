@@ -10,7 +10,6 @@ get "/rps/welcome" do
 end
 
 get "/rps/:player1/:player2" do
-  rps = Rps.new(params[:player1], params[:player2])
-  @rps = rps.play()
+  @rps = Rps.play(params[:player1], params[:player2])
   erb(:result)
 end
